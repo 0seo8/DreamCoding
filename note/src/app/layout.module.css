@@ -9,3 +9,9 @@
 .nav a {
     padding: 0 8px;
 }
+
+.product {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
