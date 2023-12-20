@@ -1,8 +1,10 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.css";
+import os from "os";
 
 export default function Home() {
-  return (
-   <h1>홈페이지다!!</h1>
-  )
+  console.log(os.hostname());
+
+  //but useState는 사용이 불가능
+  return <h1>홈페이지다!!</h1>;
 }
