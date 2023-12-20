@@ -4,6 +4,7 @@ import os from "os";
 import { Counter } from "@/components/Counter";
 
 export default function Home() {
+  console.log(`안녕 - 서버`);
   console.log(os.hostname());
 
   //but useState는 사용이 불가능
