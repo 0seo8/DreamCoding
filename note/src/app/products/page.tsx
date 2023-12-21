@@ -1,17 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { getProducts } from "@/service/prdoucts";
-import styles from "./page.module.css";
-
-// export const revalidate = 3;
+import MeowArticle from "@/components/MeowArticle";
 
 export default async function ProductsPage() {
   const products = await getProducts();
-  const res = await fetch(`https://meowfacts.herokuapp.com`, {
-    next: { revalidate: 3 },
-  });
-  const data = await res.json();
-  const factText = data.data[0];
 
   return (
     <>
@@ -23,7 +16,7 @@ export default async function ProductsPage() {
           </li>
         ))}
       </ul>
-      <article className={styles.article}>{factText}</article>
+      <MeowArticle />
     </>
   );
 }
