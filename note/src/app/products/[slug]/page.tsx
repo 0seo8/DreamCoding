@@ -1,6 +1,8 @@
 import React from "react";
-import { getProduct, getProducts, Product } from "@/service/prdoucts";
+import { getProduct, getProducts } from "@/service/prdoucts";
 import { notFound } from "next/navigation";
+
+export const revalidate = 3;
 
 type Props = {
   params: {
