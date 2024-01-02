@@ -2,6 +2,7 @@ import React from "react";
 import { getProduct, getProducts } from "@/service/prdoucts";
 import {notFound, redirect} from "next/navigation";
 import Image from "next/image";
+import GoProductsButton from "@/components/GoProductsButton";
 
 export const revalidate = 3;
 
@@ -27,6 +28,7 @@ export default async function ProductPage({ params: { slug } }: Props) {
         width="300"
         height="300"
       />
+      <GoProductsButton/>
     </>
   );
 }
