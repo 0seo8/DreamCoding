@@ -10,6 +10,11 @@ export type Post = {
   featured: boolean;
 }
 
+export async function getFeaturedPosts():Promise<Post[]>{
+  return getAllPosts()
+    .then(posts => posts.filter((post) =>post.featured))
+}
+
 export async function getAllPosts(): Promise<Post[]> {
   // path에 있는 join을 이용해 현재 process가 동작하고 있는 경로를 받아와, 프로젝트 안의 data폴더 안에 있는 posts.json파일을 읽어옴
   const filePath = path.join(process.cwd(), 'data', 'posts.json')
