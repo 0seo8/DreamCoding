@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero'
 import FeaturedPosts from '@/components/FeaturedPosts';
+import CarouselPosts from '@/components/CarouselPosts';
 
 
 export default function HomePage() {
@@ -7,6 +8,7 @@ export default function HomePage() {
     <>
       <Hero/>
       <FeaturedPosts/>
+      <CarouselPosts/>
     </>
   )
 }
