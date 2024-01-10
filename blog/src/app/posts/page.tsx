@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllPosts } from '@/service/posts';
+import { getAllPosts, getFeaturedPosts } from '@/service/posts';
 import FilterablePosts from '@/components/FilterablePosts';
 import { Metadata } from 'next';
 
@@ -12,4 +12,11 @@ export default async function PostsPage() {
   const categories = [...new Set(posts.map((post) => post.category))];
 
   return <FilterablePosts posts={posts} categories={categories} />;
+}
+
+export async function generateStaticParams() {
+  const posts = await getFeaturedPosts();
+  return posts.map((post) => ({
+    slug: post.path,
+  }));
 }
